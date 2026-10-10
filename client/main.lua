@@ -55,6 +55,7 @@ end)
 RegisterNUICallback('ready', function(_, cb)
     cb({
         position = Config.Position,
+        offset = Config.Offset,
         maxVisible = Config.MaxVisible,
         progressBar = Config.ProgressBar,
         colors = Config.Colors,
