@@ -2,7 +2,7 @@ Config = {}
 
 -- Position auf dem Bildschirm · Position on screen:
 -- 'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center'
-Config.Position = 'top-right'
+Config.Position = 'top-center'
 
 -- Standarddauer in Millisekunden, wenn der Aufruf keine nennt · Default duration in milliseconds
 Config.DefaultDuration = 5000
