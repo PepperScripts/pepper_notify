@@ -11,7 +11,7 @@ Free notification system for FiveM · Standalone (works with ESX, QBCore, Qbox o
 ### Features
 - Four types: `success`, `error`, `info`, `warning`, each with its own colour and icon
 - Optional title, timer bar and sound (native GTA sounds, no audio files)
-- Six screen positions, colours and durations set in `config.lua`
+- Eight screen positions with an adjustable distance from the edge; colours and durations set in `config.lua`
 - Exports for client and server, plus a client event
 - Accepts the field names of ox_lib (`description`, `type = 'inform'`) and QBCore (`text`, `length`, `'primary'`)
 - Same `id` replaces a notification instead of stacking it
@@ -55,7 +55,8 @@ Event (from the server): `TriggerClientEvent('pepper_notify:show', source, { mes
 ### Settings (`config.lua`)
 | Option | Meaning |
 |---|---|
-| `Config.Position` | `top-right`, `top-left`, `top-center`, `bottom-right`, `bottom-left`, `bottom-center` |
+| `Config.Position` | `top-right`, `top-left`, `top-center`, `center-right`, `center-left`, `bottom-right`, `bottom-left`, `bottom-center` |
+| `Config.Offset` | Distance from the screen edge (`x`, `y`), to move notifications clear of your HUD |
 | `Config.DefaultDuration` / `MinDuration` / `MaxDuration` | Durations in milliseconds |
 | `Config.MaxVisible` | How many notifications are visible at once |
 | `Config.ProgressBar` | Timer bar on/off |
@@ -70,7 +71,7 @@ Event (from the server): `TriggerClientEvent('pepper_notify:show', source, { mes
 ### Features
 - Vier Typen: `success`, `error`, `info`, `warning` – jeder mit eigener Farbe und eigenem Symbol
 - Optionaler Titel, Zeitbalken und Ton (GTA-eigene Sounds, keine Audiodateien)
-- Sechs Positionen, Farben und Dauer in der `config.lua`
+- Acht Positionen mit einstellbarem Abstand zum Rand (`Config.Offset`), Farben und Dauer in der `config.lua`
 - Exports für Client und Server, dazu ein Client-Event
 - Versteht die Feldnamen von ox_lib (`description`, `type = 'inform'`) und QBCore (`text`, `length`, `'primary'`)
 - Gleiche `id` ersetzt eine Meldung, statt sie zu stapeln

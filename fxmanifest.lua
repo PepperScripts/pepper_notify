@@ -6,7 +6,7 @@ lua54 'yes'
 name 'pepper_notify'
 author 'Pepper Scripts'
 description 'Clean notifications with exports for client and server – standalone'
-version '1.0.1'
+version '1.0.2'
 repository 'https://github.com/PepperScripts/pepper_notify'
 
 shared_script 'config.lua'

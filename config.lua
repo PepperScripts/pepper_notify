@@ -1,8 +1,12 @@
 Config = {}
 
 -- Position auf dem Bildschirm · Position on screen:
--- 'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center'
-Config.Position = 'top-center'
+-- 'top-right' | 'top-left' | 'top-center' | 'center-right' | 'center-left' | 'bottom-right' | 'bottom-left' | 'bottom-center'
+Config.Position = 'center-right'
+
+-- Abstand zum Bildschirmrand (1 = etwa eine Textzeile). Damit schiebst du die Meldungen an deinem HUD vorbei.
+-- Distance from the screen edge (1 = roughly one line of text). Use it to move notifications clear of your HUD.
+Config.Offset = { x = 1.5, y = 2.0 }
 
 -- Standarddauer in Millisekunden, wenn der Aufruf keine nennt · Default duration in milliseconds
 Config.DefaultDuration = 5000
