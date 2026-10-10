@@ -1,7 +1,7 @@
 // Pepper Notify – NUI: baut die Meldungen auf und blendet sie nach Ablauf aus
 (() => {
     const stack = document.getElementById('stack');
-    const POSITIONS = ['top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left', 'bottom-center'];
+    const POSITIONS = ['top-right', 'top-left', 'top-center', 'center-right', 'center-left', 'bottom-right', 'bottom-left', 'bottom-center'];
     const ICONS = {
         success: '<path d="M20 6 9 17l-5-5"/>',
         error: '<circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/>',
@@ -93,6 +93,9 @@
             .then((res) => res.json())
             .then((cfg) => {
                 if (POSITIONS.includes(cfg.position)) stack.className = 'stack ' + cfg.position;
+                const offset = cfg.offset || {};
+                if (Number(offset.x) >= 0) stack.style.setProperty('--ox', Number(offset.x) + 'rem');
+                if (Number(offset.y) >= 0) stack.style.setProperty('--oy', Number(offset.y) + 'rem');
                 if (Number(cfg.maxVisible) > 0) settings.maxVisible = Number(cfg.maxVisible);
                 settings.progressBar = cfg.progressBar !== false;
                 Object.assign(settings.colors, cfg.colors || {});

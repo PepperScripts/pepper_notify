@@ -3,6 +3,8 @@
 html, body { margin: 0; padding: 0; overflow: hidden; }
 
 .stack {
+    --ox: 1.5rem;
+    --oy: 2rem;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -12,12 +14,14 @@ html, body { margin: 0; padding: 0; overflow: hidden; }
     pointer-events: none;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
-.stack.top-right { top: 2rem; right: 1.5rem; }
-.stack.top-left { top: 2rem; left: 1.5rem; }
-.stack.top-center { top: 2rem; left: 50%; transform: translateX(-50%); }
-.stack.bottom-right { bottom: 2rem; right: 1.5rem; flex-direction: column-reverse; }
-.stack.bottom-left { bottom: 2rem; left: 1.5rem; flex-direction: column-reverse; }
-.stack.bottom-center { bottom: 2rem; left: 50%; transform: translateX(-50%); flex-direction: column-reverse; }
+.stack.top-right { top: var(--oy); right: var(--ox); }
+.stack.top-left { top: var(--oy); left: var(--ox); }
+.stack.top-center { top: var(--oy); left: 50%; transform: translateX(-50%); }
+.stack.center-right { top: 50%; right: var(--ox); transform: translateY(-50%); }
+.stack.center-left { top: 50%; left: var(--ox); transform: translateY(-50%); }
+.stack.bottom-right { bottom: var(--oy); right: var(--ox); flex-direction: column-reverse; }
+.stack.bottom-left { bottom: var(--oy); left: var(--ox); flex-direction: column-reverse; }
+.stack.bottom-center { bottom: var(--oy); left: 50%; transform: translateX(-50%); flex-direction: column-reverse; }
 
 .note {
     --accent: #4c9aff;
@@ -35,7 +39,7 @@ html, body { margin: 0; padding: 0; overflow: hidden; }
     overflow: hidden;
     animation: note-in 0.22s ease-out both;
 }
-.stack.top-left .note, .stack.bottom-left .note { --shift: -1.5rem; }
+.stack.top-left .note, .stack.center-left .note, .stack.bottom-left .note { --shift: -1.5rem; }
 .stack.top-center .note, .stack.bottom-center .note { --shift: 0rem; }
 .note.leaving { animation: note-out 0.2s ease-in both; }
 
